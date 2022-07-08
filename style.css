@@ -1,0 +1,492 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {}
+
+#header {
+    display: flex;
+    /* Set the display: flex to to navigation and icon search to the left and right */
+    justify-content: space-between;
+    background-color: black;
+    width: 100%;
+    height: 46.5px;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+.nav #nav_ul>li {
+    /*Make the list of navigation into 1 line*/
+    display: inline-block;
+}
+
+.nav>#nav_ul>li:hover>a {
+    background-color: gray;
+    color: black;
+    font-weight: 500;
+}
+
+#more {
+    position: relative;
+}
+
+.nav>#nav_ul>li>a {
+    /* To make the tag a of list of id #nav_ul has white color */
+    color: white;
+    padding: 14px 24px 14px 24px;
+}
+
+.nav #nav_ul li a {
+    text-decoration: none;
+    line-height: 46.5px;
+    /* padding: 16px 24px 16px 24px; */
+}
+
+.subnav {
+    position: absolute;
+    background-color: white;
+}
+
+.subnav {
+    display: none;
+}
+
+#more:hover ul {
+    display: block;
+}
+
+.nav .subnav>li>a {
+    /*Set padding top and bottom into 0 becasue when change display from inline-block to block,
+    the width of each element will be 100% and each element of list will down the line that it will incrase the padding*/
+    color: black;
+    display: block;
+    padding: 0px 40px 0px 14px;
+}
+
+.subnav>li {
+    list-style-type: none;
+}
+
+.subnav>li:hover>a {
+    background-color: gray;
+}
+
+#more:hover .subnav {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /*Make the box-shadow for ul tag when hover*/
+}
+
+.search {
+    padding: 14px 24px 11px 24px;
+    /*Set padding for icon search*/
+}
+
+.search ion-icon {
+    color: white;
+    height: 20px;
+    width: 20px;
+}
+
+.search:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+#slider {
+    background-image: url('./assets/images/chicago.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 46.5px;
+    padding-top: 50%;
+    /*If set padding-top or padding-bottom with percent unit(%), the height will be equal % with the witdh*/
+    position: relative;
+}
+
+#slider .text {
+    color: white;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+}
+
+#slider .text h4 {
+    font-size: 24px;
+    padding: 10px;
+    font-weight: 400;
+}
+
+#slider .text p {
+    padding: 10px;
+    font-weight: 600;
+}
+
+#content {}
+
+.content-section {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 16px;
+    text-align: center;
+    width: 800px;
+}
+
+.section-heading {
+    letter-spacing: 4px;
+    font-weight: 400;
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+.sub-heading {
+    margin: 15px 0;
+    font-style: italic;
+    opacity: 0.6;
+    font-size: 16px;
+}
+
+#content .section_info {
+    text-align: justify;
+    margin: 15px 0;
+    font-size: 14.7px;
+    line-height: 1.5;
+}
+
+.member_section {
+    padding: 32px 0;
+    /* overflow: hidden; */
+    display: flex;
+    flex-flow: row;
+}
+
+.member {
+    /* float: left; */
+    width: calc(100%/3);
+}
+
+.member>p {
+    padding: 15px 0;
+    font-size: 15px;
+    text-align: center;
+}
+
+.member>img {
+    margin-bottom: 16px;
+    width: 154px;
+    height: 154px;
+    border-radius: 4px;
+}
+
+.tour-dates {
+    background-color: black;
+    color: white;
+}
+
+.ticket {
+    background-color: white;
+}
+
+.ticket li {
+    list-style-type: none;
+    padding: 8px 16px;
+    color: #8B7575;
+    display: list-item;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.ticket .sold-out {
+    margin-left: 16px;
+    padding: 3px 8px;
+    background-color: #f44a3e;
+    color: white;
+    line-height: 22.5px;
+    font-size: 15px;
+}
+
+.month .available {
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    padding: 2px 7px;
+    margin-right: 16px;
+    float: right;
+}
+
+.ticket_info {
+    padding: 32px 8px;
+    display: flex;
+    flex-flow: row;
+    margin: 0 -16px;
+}
+
+.place {
+    padding: 0 8px;
+    margin-bottom: 16px;
+    height: 100%;
+}
+
+.place img {
+    width: 245.33px;
+    height: 184px;
+}
+
+.place img:hover {
+    opacity: 0.6;
+}
+
+.place_detail {
+    padding: 0.150px 16px;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    /*If use float:left or right to move element to left or right, the size can be not enough and make the children element
+    get out of parent div, so use overflow: hidden to fix this error */
+}
+
+.place_detail p {
+    margin: 15px 0px;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    text-align: start;
+}
+
+.place_detail button {
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 15px;
+    float: left;
+    /*If use float:left or right to move element to left or right, the size can be not enough and make the children element
+    get out of parent div, so use overflow: hidden to fix this error */
+}
+
+.place_detail button:hover {
+    background-color: #cccccc;
+    color: black;
+}
+
+.model_buy_ticket {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    /*Use align-item: center, to make all child element inside will be located on the middle of the height of parent div*/
+    justify-content: center;
+    /*Use justify-content: center, to make all child element inside will be located on the middle of the width of parent div*/
+    display: none;
+}
+
+.box-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 12px;
+}
+
+.box-close ion-icon {
+    width: 24px;
+    height: 36px;
+}
+
+.box-close:hover {
+    background-color: #cccccc;
+    color: black;
+    font-weight: 200;
+}
+
+.box {
+    width: 900px;
+    animation: boxShow ease 0.4s;
+}
+
+.box-header {
+    position: relative;
+    background-color: #009688;
+    padding: 32px 16px;
+    text-align: center;
+    font-size: 30px;
+    color: #FFFFFF;
+    letter-spacing: 4px;
+}
+
+.box-header>ion-icon {
+    width: 44px;
+    height: 40px;
+    padding-top: 10px;
+}
+
+.box-body {
+    background-color: #fff;
+    padding: 0 16px;
+}
+
+.box_label {
+    display: block;
+}
+
+.box_label {
+    padding: 15px 0;
+}
+
+.box_input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+}
+
+#buy-tickets {
+    width: 100%;
+    padding: 16px;
+    margin: 16px 0;
+    background-color: #009688;
+    color: white;
+    border: none;
+}
+
+#buy-tickets:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+.box-footer {
+    background-color: #fff;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.close {
+    margin: 16px 0;
+    padding: 8px 16px;
+    font-size: 15px;
+    display: flex;
+    background-color: #f44336;
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+.close>ion-icon {
+    width: 20px;
+    height: 18px;
+}
+
+.close:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+.link {
+    margin: 15px 0;
+}
+
+.link a {
+    color: #2397f3;
+}
+
+@keyframes boxShow {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.contact {
+    padding: 32px 0;
+    display: flex;
+}
+
+.contact_info {
+    flex: 1;
+    margin-bottom: 16px;
+    text-align: start;
+}
+
+.contact_info p {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.contact_info ion-icon {
+    padding-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+.contact_form {
+    flex: 1;
+}
+
+.contact_form .top {}
+
+.top #fix1 {
+    padding: 8px;
+    margin-right: 13px;
+    border: 1px solid #ccc;
+}
+
+.top #fix2 {
+    padding: 8px;
+    margin-left: 1px;
+    border: 1px solid #ccc;
+}
+
+.box_message {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+.contact_form .send {
+    margin: 16px 0;
+    padding: 8px 16px;
+    float: right;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.contact_form .send:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer p {
+    margin: 15px 0;
+    color: #8B7575;
+}
+
+#link_w3 {
+    color: #8B7575;
+}
+
+.social_list>a {
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
+    opacity: 0.6;
+}
